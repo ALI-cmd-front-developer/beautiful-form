@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">    <title>Document</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+    /*  pink ffcdd2  ff7043  grad ffd54f  */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container {
+        border-radius: 10px;
+        display: flex;
+        min-height: 70vh;
+        box-shadow: 0 -5px 12px 1px #ffd54f , -3px 12px 10px 2px #ffcdd2 ;
+    }
+    .left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 20px;
+        background-color: #ffff;
+        border-radius: 10px 0 0 10px;
+        width: 90%;
+    }
+    .left h2 {
+        margin-bottom: 6px;
+        font-size: 20px;
+        text-transform: capitalize;
+        font-family: sans-serif;
+    }
+    input::placeholder {
+        font-family: sans-serif;
+        color: #ff3448;
+        font-weight: 600;
+        font-size: 15px;
+    }
+    .left input {
+        all: unset;
+        width: calc(100% - 0.5rem);
+        border-radius: 500px;
+        padding: 5px 0 5px 35px;
+        color: #ff0019;
+        font-size: 21px;
+        position: relative;
+        box-shadow: 0 -2px 12px #fbff00 , 0 2px 12px #ff3648 , 0 3px 5px #ff00ff ;
+    }
+    .input-cont {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+    i{
+        position: absolute;
+        top: 23%;
+        left: 3%;
+        font-size: 18px;
+        background-image: linear-gradient(#ffd139 3%, #ff0019);
+        color: transparent;
+        align-self: flex-end;
+        background-clip: text;
+    }
+    .eyes {
+        left: 90%;
+        cursor: pointer;
+        top: 24%;
+    }
+    #check {
+        margin-right: 1px;
+        width: 12px;
+        height: 12px;
+        box-shadow: none;
+        accent-color: #ff0019;
+        position: relative;
+        z-index: 5;
+    }
+    .checkbox {
+        margin: 0 0 16px 0;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative;
+    }
+    label {
+        font-size: 13px;
+        color: #ff0019;
+        padding-left: 4px;
+        font-family: sans-serif;
+    }
+    .left p {
+        color: red;
+    }
+    a {
+        text-decoration: none;
+        color: #ffc400;
+        font-weight: 900;
+    }
+    #sub {
+        all: unset;
+        min-width: 100px;
+        height: 20px;
+        padding: 5px 22px 3px 22px;
+        margin-bottom: 8px;
+        color: #ffff;
+        font-family: sans-serif;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-radius: 12px;
+        background-image: linear-gradient(to right , #ffc400 , #ff0019);
+    }
+    p {
+        color: #ff0019;
+        font-family: sans-serif;
+        font-weight: 500;
+    }
+    p a {
+        font-size: 15px;
+    }
+
+    .right {
+        background-image: linear-gradient(#ffc400  ,#ff3348 65%);
+        border-radius: 0 10px 10px 0;
+        text-align: center;
+        align-content: center;
+        color: #ffff;
+        position: relative;
+        padding: 12px;
+    }
+    span {
+        color: #ffff;
+        font-size: 25px;
+        font-family: sans-serif;
+        opacity: .4;
+        font-style: italic;
+    }
+    span:nth-child(1) {
+        position: absolute;
+        top: 12%;
+        font-style: italic;
+        left: 11%;
+    }
+    .right .a2 {
+        position: absolute;
+        top: 65%;
+        left: 11%;
+    }
+    .right .a3 {
+        position: absolute;
+        top: 66%;
+        left: 87%;
+    }
+    .right h2{line-height: 53px;}
+    .right h2 ,p{
+        font-family: sans-serif;
+        color: #ffff;
+    }
+    .alamy1 {
+        opacity: .5;
+        font-style: italic;
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        position: absolute;
+        top: 12%;
+        left: 75%;
+    }
+    .alamy2 {
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        opacity: .5;
+        font-style: italic;
+        font-size: 25px;
+        font-family: Arial, Helvetica, sans-serif;
+        transform: translateX(-50%);
+    }
+
+    .custom-span {
+        position: absolute;
+        top: 48%;
+        left: 12%;
+        transform: translate(-10% , -48%);
+        width: 12px;
+        opacity: 1;
+        height: 12px;
+        border: .1px solid #ff3348;
+        border-radius: 50%;
+    }
+    
+    .chec {
+        position: absolute;
+        top: 2%;
+        left: 53%;
+        transform: translate(-52% , 6%) scale(0);
+        font-size: 10px;
+        transition: .3s;
+    }
+    #check:checked ~ .custom-span .chec{
+        
+        transform: translate(-52% , 6%) scale(1);
+        color: #ff4659;
+    }
+    
+    @media screen and (max-width : 700px) {
+        .container {
+            flex-wrap: wrap-reverse;
+            width: 350px;
+            justify-content: center;
+        }
+        .right {
+            height: 30vh;
+            border-radius: 10px;
+        }
+        i {
+            top: 26%;
+            left: 3.5%;
+        }
+        .alamy1 {
+            top: 6%;
+        }
+        #sub {
+            font-size: 14px;
+            padding: 7px 12px;
+            line-height: 18px;
+            transform: translate(0,-24%);
+        }
+        .eyes {
+            left: 90%;
+            top: 30%;
+        }
+        .left input {
+            padding: 5px 0 9px 40px;
+            width: 100%;
+        }
+        label {
+            font-size: 12px;
+            position: relative;
+            left: -7%;
+        }
+        .custom-span {
+            left: 8%;
+        }
+        #check {
+            transform: translate(-40%,-42%) scale(1.1);
+        }
+        .php , .php a {
+            font-size: 16px;
+            padding-left: 5px;
+        }
+        .right h2{
+            font-size: 22px;
+        }
+        .lor {
+            font-size: 12px;
+        }
+        .input-cont {
+            min-width: 115%;
+            display:flex;
+            margin: 14px 0;
+        }
+    }  
+</style>
+</head>
+<body>
+   <div class="container">
+    <div class="left">
+        <h2>hello,friend!</h2>
+        <div class="input-cont"><input type="text" placeholder="Name" required><i class="fa-solid fa-user"></i></div>
+        <div class="input-cont"><input type="email" placeholder="Email" required><i class="fa-solid fa-envelope"></i></div>
+        <div class="input-cont"><input type="password" placeholder="Password" required><i class="fa-solid fa-lock"></i><i class="fa-solid fa-eye eyes"></i></div>
+        <div class="checkbox">
+            <div class="custom">
+                <input type="checkbox" name="ali" id="check">
+                <span class="custom-span"><i class="fa-solid fa-check chec"></i></span>
+            </div>
+        <label>i've read and aggre to <a href="#">Terms & condition</a></label>
+        </div>
+        <input type="submit" value="create account" id="sub">
+        <p class="php">Already have an account? <a href="#">sign in</a></p>
+    </div>
+
+
+    <div class="right">
+        <span>a</span>
+        <p class="alamy1">alamy</p>
+        <h2>Glad to see you</h2>
+        <p class="lor">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+        <span class="a2">a</span>
+        <span class="a3">a</span>
+        <p class="alamy2">alamy</p>
+    </div>
+
+
+   </div>
+</body>
+</html>
